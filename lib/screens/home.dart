@@ -11,6 +11,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentPage = 0;
+  String title = "Giá vàng";
+  String subTitle = "( Nguồn SJC )";
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
@@ -18,7 +20,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Giá vàng"),
+          title: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
+                Text(
+                  subTitle,
+                  style: TextStyle(color: Colors.white, fontSize: 14.0),
+                ),
+              ]),
         ),
         body: Container(
           decoration: BoxDecoration(color: Colors.white),
@@ -42,6 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
           onTabChangedListener: (position) {
             setState(() {
               currentPage = position;
+              title = position == 0 ? "Giá vàng" : "Tỷ giá";
+              subTitle = position == 0 ? "( Nguồn SJC )" : "( Nguồn VCB )";
             });
           },
         ),

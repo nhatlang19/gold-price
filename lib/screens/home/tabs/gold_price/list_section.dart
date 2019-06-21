@@ -4,7 +4,6 @@ import 'package:gold_price/model/gold_price/gold_price_response.dart';
 import 'package:gold_price/model/gold_price/item.dart';
 import 'package:sticky_header_list/sticky_header_list.dart';
 import 'package:intl/intl.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class ListSection extends StatelessWidget {
   ListSection({Key key, @required this.goldPrice}) : super(key: key);
@@ -71,7 +70,7 @@ class ListSection extends StatelessWidget {
         flex: 1);
 
     return new Container(
-        height: 60.0,
+        height: 50.0,
         color: Colors.white,
         padding: EdgeInsets.symmetric(horizontal: 15.0),
         alignment: Alignment.centerLeft,

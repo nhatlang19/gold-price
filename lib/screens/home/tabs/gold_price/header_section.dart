@@ -6,7 +6,8 @@ class HeaderSection extends StatelessWidget {
     final leftSection = new Flexible(
         child: new Text(
           "Loại vàng",
-          style: new TextStyle(color: Colors.black, fontSize: 14.0),
+          style: new TextStyle(
+              color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold),
         ),
         flex: 2);
     final rightSection = new Flexible(
@@ -17,11 +18,11 @@ class HeaderSection extends StatelessWidget {
             children: <Widget>[
               new Text(
                 "Mua vào",
-                style: new TextStyle(color: Colors.black, fontSize: 14.0),
+                style: new TextStyle(color: Colors.black, fontSize: 16.0),
               ),
               new Text(
                 "Bán ra",
-                style: new TextStyle(color: Colors.black, fontSize: 14.0),
+                style: new TextStyle(color: Colors.black, fontSize: 16.0),
               )
             ],
           ),
@@ -29,8 +30,8 @@ class HeaderSection extends StatelessWidget {
         flex: 1);
 
     return new Container(
-        height: 60.0,
-        color: Colors.white,
+        height: 40.0,
+        color: Colors.grey,
         padding: EdgeInsets.symmetric(horizontal: 15.0),
         alignment: Alignment.centerLeft,
         child: Row(
