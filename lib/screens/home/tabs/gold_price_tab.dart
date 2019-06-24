@@ -3,10 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gold_price/bloc/gold_price_bloc.dart';
 import 'package:gold_price/model/gold_price/gold_price_response.dart';
-
-import 'gold_price/header_section.dart';
-import 'gold_price/list_section.dart';
-import 'gold_price/title_section.dart';
+import 'package:gold_price/widgets/gold_price_widget.dart';
 
 class GoldPriceTab extends StatefulWidget {
   @override
@@ -28,48 +25,22 @@ class _GoldPriceState extends State<GoldPriceTab> {
 
   @override
   Widget build(BuildContext context) {
+    GoldPriceWidget _widget = GoldPriceWidget();
+
     return StreamBuilder<GoldPriceResponse>(
       stream: bloc.subject.stream,
       builder: (context, AsyncSnapshot<GoldPriceResponse> snapshot) {
         if (snapshot.hasData) {
           if (snapshot.data.error != null && snapshot.data.error.length > 0) {
-            return _buildErrorWidget(snapshot.data.error);
+            return _widget.buildError(snapshot.data.error);
           }
-          return _buildGoldPriceWidget(snapshot.data);
+          return _widget.buildGoldPrice(snapshot.data);
         } else if (snapshot.hasError) {
-          return _buildErrorWidget(snapshot.error);
+          return _widget.buildError(snapshot.error);
         } else {
-          return _buildLoadingWidget();
+          return _widget.buildLoading();
         }
       },
     );
-  }
-
-  Widget _buildErrorWidget(String error) {
-    return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text("Error occured: $error"),
-      ],
-    ));
-  }
-
-  Widget _buildLoadingWidget() {
-    return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Text("Loading data ..."), CircularProgressIndicator()],
-    ));
-  }
-
-  Widget _buildGoldPriceWidget(GoldPriceResponse _goldPrice) {
-    Widget titleSection =
-        TitleSection(title: "Cập nhật lúc: ${_goldPrice.rateList.updated}");
-    Widget listSection = ListSection(goldPrice: _goldPrice);
-    Widget headerSection = HeaderSection();
-    return new Container(
-        decoration: BoxDecoration(color: Colors.white),
-        child: Column(children: [titleSection, headerSection, listSection]));
   }
 }

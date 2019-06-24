@@ -5,12 +5,13 @@ class Exrate {
   final double transfer;
   final double sell;
 
-  Exrate(this.currencyCode, this.currentName, this.buy, this.transfer, this.sell);
+  Exrate(
+      this.currencyCode, this.currentName, this.buy, this.transfer, this.sell);
 
   Exrate.fromJson(Map<String, dynamic> json)
       : currencyCode = json["CurrencyCode"],
         currentName = json["CurrentName"],
-        buy = json["Buy"],
-        transfer = json["Transfer"],
-        sell = json["Sell"];
+        buy = double.parse(json["Buy"]),
+        transfer = double.parse(json["Transfer"]),
+        sell = double.parse(json["Sell"]);
 }

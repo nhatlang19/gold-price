@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 0:
         return new GoldPriceTab();
       case 1:
-        return new ExchangeRateTab(context: context);
+        return new ExchangeRateTab();
       default:
         return new GoldPriceTab();
     }
