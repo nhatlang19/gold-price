@@ -43,11 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: FancyBottomNavigation(
           tabs: [
             TabData(
-              iconData: Icons.home,
+              iconData: Icons.atm,
               title: "Giá vàng",
             ),
             TabData(
-              iconData: Icons.search,
+              iconData: Icons.attach_money,
               title: "Tỷ giá",
             ),
           ],
