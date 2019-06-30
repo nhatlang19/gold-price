@@ -32,8 +32,6 @@ class ListSection extends StatelessWidget {
     return new Container(
       height: 30.0,
       color: new Color(0xFF282E3D),
-      //  color: new Color(0xFF67739C),
-
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       alignment: Alignment.centerLeft,
       child: new Text(

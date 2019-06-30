@@ -20,14 +20,10 @@ class ListSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: LiquidPullToRefresh(
-      key: _refreshIndicatorKey, // key if you want to add
-      onRefresh: _handleRefresh, // refresh callback
-      showChildOpacityTransition: false,
       child: ListView(
         children: this._buildList(),
-      ), // scroll view
-    ));
+      ),
+    );
   }
 
   Future<void> _handleRefresh() {
@@ -94,7 +90,7 @@ class ListSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Text(
-                        f.format(item.buy).toString(),
+                        item.buy,
                         style:
                             new TextStyle(color: Colors.white, fontSize: 14.0),
                       ),
@@ -111,7 +107,7 @@ class ListSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Text(
-                        f.format(item.transfer).toString(),
+                        item.transfer,
                         style:
                             new TextStyle(color: Colors.white, fontSize: 14.0),
                       ),
@@ -128,7 +124,7 @@ class ListSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Text(
-                        f.format(item.sell).toString(),
+                        item.sell,
                         style:
                             new TextStyle(color: Colors.white, fontSize: 14.0),
                       ),

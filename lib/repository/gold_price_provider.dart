@@ -1,11 +1,12 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gold_price/model/gold_price/gold_price_response.dart';
 import 'package:xml2json/xml2json.dart';
 
 class GoldPriceProvider {
-  final String _url = "http://www.sjc.com.vn/xml/tygiavang.xml";
+  final String _url = DotEnv().env['GOLD_RATING_URL'];
   final Dio _dio = Dio();
   final Xml2Json xml2json = Xml2Json();
 
