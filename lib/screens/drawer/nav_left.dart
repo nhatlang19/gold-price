@@ -12,12 +12,12 @@ class NavLeft extends StatelessWidget {
             accountName: Text('Luan Nguyen'),
             accountEmail: Text('luan.nguyen29111987@gmail.com'),
             currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.white,
                 child: new Text(
                   'LN',
                   style: new TextStyle(fontSize: 40.0),
                 )),
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(color: new Color(0xFF282E3D)),
           ),
           ListTile(
             leading: Icon(Icons.settings),

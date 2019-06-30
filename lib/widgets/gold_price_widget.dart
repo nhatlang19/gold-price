@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gold_price/bloc/exchange_rate_bloc.dart';
 import 'package:gold_price/model/echange_rate/exrate_list.dart';
 import 'package:gold_price/model/gold_price/gold_price_response.dart';
 
@@ -25,7 +26,7 @@ class GoldPriceWidget {
     return this.goldWidget.build(_goldPrice);
   }
 
-  Widget buildExchangeRate(ExrateList exrateList) {
-    return this.exchangeWidget.build(exrateList);
+  Widget buildExchangeRate(ExrateList exrateList, ExchangeRateBloc bloc) {
+    return this.exchangeWidget.build(exrateList, bloc);
   }
 }

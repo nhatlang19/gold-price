@@ -30,7 +30,7 @@ class _ExchangeRateState extends State<ExchangeRateTab> {
           if (snapshot.data.error != null && snapshot.data.error.length > 0) {
             return _widget.buildError(snapshot.data.error);
           }
-          return _widget.buildExchangeRate(snapshot.data);
+          return _widget.buildExchangeRate(snapshot.data, bloc);
         } else if (snapshot.hasError) {
           return _widget.buildError(snapshot.error);
         } else {

@@ -11,7 +11,7 @@ class BuildGoldPriceWidget {
     Widget listSection = ListSection(goldPrice: _goldPrice);
     Widget headerSection = HeaderSection();
     return new Container(
-        decoration: BoxDecoration(color: Colors.white),
+        decoration: BoxDecoration(color: new Color(0xFF727B9B)),
         child: Column(children: [titleSection, headerSection, listSection]));
   }
 }
