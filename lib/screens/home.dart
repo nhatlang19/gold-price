@@ -3,6 +3,7 @@ import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:gold_price/screens/drawer/nav_left.dart';
 import 'package:gold_price/screens/home/tabs/exchange_rate_tab.dart';
 import 'package:gold_price/screens/home/tabs/gold_price_tab.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -43,16 +44,18 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: FancyBottomNavigation(
           tabs: [
             TabData(
-              iconData: Icons.atm,
+              iconData: FontAwesomeIcons.handHoldingUsd,
               title: "Giá vàng",
             ),
             TabData(
-              iconData: Icons.attach_money,
+              iconData: FontAwesomeIcons.exchangeAlt,
               title: "Tỷ giá",
             ),
           ],
           initialSelection: 0,
           key: bottomNavigationKey,
+          barBackgroundColor: new Color(0xFF727B9B),
+          textColor: Colors.white,
           onTabChangedListener: (position) {
             setState(() {
               currentPage = position;
